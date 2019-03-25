@@ -12,5 +12,22 @@
 */
 
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+    // return $router->app->version();
+    return "Hello from " . env("API_NAME");
+});
+
+$api = app('Dingo\Api\Routing\Router');
+
+$api->version('v1', [
+    'middleware' => ['api.throttle'],
+    'limit' => 100,
+    'expires' => 5,
+    'prefix' => 'api/v1',
+    'namespace' => 'App\Http\Controllers\V1',
+], function ($api) {
+
+    /**
+     * Unauthenticated Routes
+     */
+
 });
