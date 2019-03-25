@@ -34,4 +34,9 @@ $api->version('v1', [
     $api->get('/contacts', ['uses' => 'ContactController@index', 'as' => 'api.contacts.index']);
     $api->post('/contacts', ['uses' => 'ContactController@store', 'as' => 'api.contacts.store']);
     $api->get('/contacts/{id}', ['uses' => 'ContactController@show', 'as' => 'api.contacts.show']);
+
+    // Product
+    $api->get('/products', ['uses' => 'ProductController@index', 'as' => 'api.products.index']);
+    $api->get('/products/{id}', ['uses' => 'ProductController@show', 'as' => 'api.products.index']);
+
 });
