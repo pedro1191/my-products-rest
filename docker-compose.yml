@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    image: my-products-rest.local
+
+    ports:
+        - 8089:80
+
+    volumes:
+      - .:/var/www/html
