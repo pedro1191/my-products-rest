@@ -30,4 +30,8 @@ $api->version('v1', [
      * Unauthenticated Routes
      */
 
+    // Contact
+    $api->get('/contacts', ['uses' => 'ContactController@index', 'as' => 'api.contacts.index']);
+    $api->post('/contacts', ['uses' => 'ContactController@store', 'as' => 'api.contacts.store']);
+    $api->get('/contacts/{id}', ['uses' => 'ContactController@show', 'as' => 'api.contacts.show']);
 });
