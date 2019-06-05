@@ -37,9 +37,8 @@ $api->version('v1', [
 
     // Product
     $api->get('/products', ['uses' => 'ProductController@index', 'as' => 'api.products.index']);
-    $api->get('/products/{id}', ['uses' => 'ProductController@show', 'as' => 'api.products.index']);
+    $api->get('/products/{id}', ['uses' => 'ProductController@show', 'as' => 'api.products.show']);
 
     // Category
     $api->get('/categories', ['uses' => 'CategoryController@index', 'as' => 'api.categories.index']);
-
 });
